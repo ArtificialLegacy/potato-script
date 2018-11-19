@@ -2,32 +2,39 @@
 Potato script is here :D
 
 ### Define a var
-init var_name : (value) [tag];
-TAG = global, local, private, constant
+init var_name : (value) [tag] |
+* TAG = global, local, private, constant
 
 ### Define a function
-func function_name : (state) [tag];
-STATE = async, sync, event
-TAG = static, private
+func function_name : (state) [tag] |
+* STATE = async, sync, event
+* TAG = static, private
 
 ### Contruct a var
-construct construct_name : (type) [tag];
-TYPE = list, map
+construct construct_name : (type) [tag] |
+* TYPE = list, map
 
 ### Read a construct
-index construct_name : (index) [return];
+index construct_name : (index) [return] |
 
 ### Edit a construct
-serve construct_name : (index) [value];
+serve construct_name : (index) [value] |
 
 ### Return a math function
-math function_name : (input) [return];
-FUNCTION_NAME = random, sqr, range, bounds, floor, ceil, round, min, max
+math function_name : (input) [return] |
+* FUNCTION_NAME = random, sqr, range, bounds, floor, ceil, round, min, max
 
 ### Edit a math object
-edit var_name : (input) [tag]
-TAG = +, -, *, /, **, 
+edit var_name : (input) [tag] |
+* TAG = +, -, *, /, **, 
 
 ### Get a complex constant
-complex var_type : (return) [tag]
-VAR_TYPE = pi
+complex var_type : (return) [tag] |
+* VAR_TYPE = pi
+
+### End a group
+end value : (static) [static] |
+
+## Compare vars
+detect var1 : (var2) [tag] |
+* TAG = =, !=, >, <, >=, <=
