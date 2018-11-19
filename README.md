@@ -35,6 +35,6 @@ complex var_type : (return) [tag] |
 ### End a group
 end value : (static) [static] |
 
-## Compare vars
+### Compare vars
 detect var1 : (var2) [tag] |
 * TAG = =, !=, >, <, >=, <=
