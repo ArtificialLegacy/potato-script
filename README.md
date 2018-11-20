@@ -68,3 +68,6 @@ parse file_name : ( state ) |
 
 ### save a json file
 save file_name : ( style ) |
+
+### send a var into a script scope
+emit file_name : ( var_name ) |
