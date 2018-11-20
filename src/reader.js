@@ -18,9 +18,9 @@ let globalScope = {
   "functions": {
     
   },
-  "runners": {
+  "runners": [
     
-  },
+  ],
 };
 
 let localScope = {
@@ -31,9 +31,9 @@ let localScopeTemplate = {
   "functions": {
   
   },
-  "runners": {
+  "runners": [
     
-  },
+  ],
 };
 
 // compile project
