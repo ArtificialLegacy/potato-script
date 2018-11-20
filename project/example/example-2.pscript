@@ -1,1 +1,5 @@
+construct xLog : ( list ) |
+construct yLog : ( list ) |
 
+init xTrace : ( 0 ) [ global ] |
+init yTrace : ( 0 ) [ global ] |
