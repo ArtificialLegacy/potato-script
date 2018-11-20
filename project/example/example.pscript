@@ -1,1 +1,11 @@
+~~ import secondary file
+insert example-2 |
 
+~~ define global vars
+init x : ( 0 ) [ global ] |
+init y : ( 0 ) [ global ] |
+
+~~ define the loop
+loop |
+
+end |
