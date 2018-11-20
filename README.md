@@ -29,7 +29,7 @@ edit var_name : ( input ) [ tag ] |
 * TAG = +, -, *, /, **, 
 
 ### Get a complex constant
-complex var_type : ( return ) [ tag ] |
+complex var_type : ( return ) |
 * VAR_TYPE = pi
 
 ### End a group
