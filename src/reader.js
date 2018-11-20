@@ -14,7 +14,7 @@ let file = fs.readFileSync(`../project/${projectName}/${entry}.pscript`);
 let globalScope = {
   "events": {
     
-  },
+    },
   "functions": {
     
   },
@@ -28,9 +28,6 @@ let localScope = {
 };
 
 let localScopeTemplate = {
-  "events": {
-    
-  },
   "functions": {
   
   },
