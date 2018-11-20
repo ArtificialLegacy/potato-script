@@ -41,3 +41,9 @@ detect var1 : ( var2 ) [ tag ] |
 
 ### Run a function
 run function_name : ( static ) [ static ] |
+
+### Import a file
+insert file_name : (static) [tag] |
+
+### Run a file
+script file_name : (static) [static] |
