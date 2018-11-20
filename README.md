@@ -73,7 +73,7 @@ print var_name : ( tag ) |
 clear |
 
 ### read a json file
-parse file_name : ( state ) |
+parse file_name |
 
 ### save a json file
 save file_name : ( style ) |
