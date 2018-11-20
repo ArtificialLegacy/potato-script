@@ -71,3 +71,9 @@ save file_name : ( style ) |
 
 ### send a var into a script scope
 emit file_name : ( var_name ) |
+
+### define a loop
+loop |
+
+### comments
+~~ comment here
