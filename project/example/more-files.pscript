@@ -1,1 +1,20 @@
+init x : ( 0 ) [ global ] |
+init y : ( 0 ) [ global ] |
 
+get defaultX |
+get defaultY |
+
+merge x : ( defaultX ) |
+merge y : ( defaultY ) |
+
+func increment : ( sync ) [ global ] |
+  edit x : ( 1 ) [ + ] |
+  edit y : ( 1 ) [ + ] |
+end 1 |
+
+run increment |
+
+emit x |
+emit y |
+
+exit |
