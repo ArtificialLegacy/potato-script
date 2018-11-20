@@ -48,11 +48,14 @@ insert file_name : ( tag ) |
 ### Run a file
 script file_name |
 
+### Get a var from the main file
+get var_name : ( tag ) |
+
 ### Return a var from a script
 return var_name : ( tag ) |
 
 ### End a script
-exit static : ( tag ) |
+exit |
 
 ### remove a var
 rem var_name |
