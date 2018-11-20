@@ -18,21 +18,20 @@ let globalScope = {
   "functions": {
     
   },
+  "variables": {
+    
+  },
   "runners": [
     
   ],
 };
 
-let localScope = {
-
-};
-
-let localScopeTemplate = {
-  "functions": {
-  
-  },
+let functionTemplate = {
+  "name": "",
+  "state": "",
+  "tag": "",
   "runners": [
-    
+  
   ],
 };
 
