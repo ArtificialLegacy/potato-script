@@ -38,3 +38,6 @@ end value : (static) [static] |
 ### Compare vars
 detect var1 : (var2) [tag] |
 * TAG = =, !=, >, <, >=, <=
+
+### Run a function
+run function_name : (static) [static] |
