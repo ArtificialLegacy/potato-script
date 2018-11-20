@@ -26,6 +26,10 @@ let globalScope = {
   ],
 };
 
+let fileScope = {
+  
+};
+
 let functionTemplate = {
   "name": "",
   "state": "",
