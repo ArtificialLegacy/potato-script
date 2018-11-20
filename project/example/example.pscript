@@ -14,5 +14,9 @@ merge y : ( defaultY ) |
 
 ~~ define the loop
 loop |
-
+  script more-files |
+  merge x : ( tempX ) |
+  merge y : ( tempY ) |
+  print console : ( x ) |
+  print console : ( y ) |`
 end |
