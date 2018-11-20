@@ -30,6 +30,9 @@ let functionTemplate = {
   "name": "",
   "state": "",
   "tag": "",
+  "variables": {
+    
+  },
   "runners": [
   
   ],
