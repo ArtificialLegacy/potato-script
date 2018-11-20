@@ -4,17 +4,17 @@ init y : ( 0 ) [ global ] |
 get defaultX |
 get defaultY |
 
-merge x : ( defaultX ) |
-merge y : ( defaultY ) |
+merge tempX : ( defaultX ) |
+merge tempY : ( defaultY ) |
 
 func increment : ( sync ) [ global ] |
-  edit x : ( 1 ) [ + ] |
-  edit y : ( 1 ) [ + ] |
+  edit tempX : ( 1 ) [ + ] |
+  edit tempY : ( 1 ) [ + ] |
 end 1 |
 
 run increment |
 
-emit x |
-emit y |
+emit tempX : ( global ) |
+emit tempY : ( global ) |
 
 exit |
