@@ -33,14 +33,14 @@ complex var_type : ( return ) [ tag ] |
 * VAR_TYPE = pi
 
 ### End a group
-end value : ( static ) [ static ] |
+end value |
 
 ### Compare vars
 detect var1 : ( var2 ) [ tag ] |
 * TAG = =, !=, >, <, >=, <=
 
 ### Run a function
-run function_name : ( static ) [ static ] |
+run function_name |
 
 ### Import a file
 insert file_name : ( tag ) |
@@ -58,7 +58,13 @@ exit static : ( tag ) |
 rem var_name |
 
 ### print to console
-print var_name : (tag) |
+print var_name : ( tag ) |
 
 ### clear the console
 clear |
+
+### read a json file
+parse file_name : ( state ) |
+
+### save a json file
+save file_name : ( style ) |
