@@ -18,5 +18,9 @@ loop |
   merge x : ( tempX ) |
   merge y : ( tempY ) |
   print console : ( x ) |
-  print console : ( y ) |`
+  print console : ( y ) |
+  edit xTrace : ( 1 ) [ + ] |
+  edit yTrace : ( 1 ) [ + ] |
+  super xLog : ( xTrace ) [ x ] |
+  super yLog : ( yTrace ) [ y ] |
 end |
