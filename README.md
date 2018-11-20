@@ -43,7 +43,22 @@ detect var1 : ( var2 ) [ tag ] |
 run function_name : ( static ) [ static ] |
 
 ### Import a file
-insert file_name : (static) [tag] |
+insert file_name : ( tag ) |
 
 ### Run a file
-script file_name : (static) [static] |
+script file_name |
+
+### Return a var from a script
+return var_name : ( tag ) |
+
+### End a script
+exit static : ( tag ) |
+
+### remove a var
+rem var_name |
+
+### print to console
+print var_name : (tag) |
+
+### clear the console
+clear |
