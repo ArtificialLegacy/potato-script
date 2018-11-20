@@ -26,7 +26,13 @@ math function_name : ( input ) [ return ] |
 
 ### Edit a math object
 edit var_name : ( input ) [ tag ] |
-* TAG = +, -, *, /, **, 
+* TAG = +, -, *, /, **, =
+
+### Dynamicly edit a math object
+super var_name : ( var_name2 ) [ tag ] |
+
+### Merge variables
+merge var_name : ( var_name2 ) |
 
 ### Get a complex constant
 complex var_type : ( return ) |
