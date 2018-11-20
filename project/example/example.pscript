@@ -1,9 +1,16 @@
 ~~ import secondary file
 insert example-2 |
 
+parse example |
+index example : ( defaultX ) [ defaultX ] |
+index example : ( defaultY ) [ defaultY ] |
+
 ~~ define global vars
 init x : ( 0 ) [ global ] |
 init y : ( 0 ) [ global ] |
+
+merge x : ( defaultX ) |
+merge y : ( defaultY ) |
 
 ~~ define the loop
 loop |
