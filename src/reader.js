@@ -100,6 +100,8 @@ function compiler(tempFile){
         break;
       case "loop":
         break;
+      case "hyper":
+        break;
       case "~~":
         break;
       default:
