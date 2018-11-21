@@ -28,6 +28,9 @@ math function_name : ( input ) [ return ] |
 edit var_name : ( input ) [ tag ] |
 * TAG = +, -, *, /, **, =
 
+### Dynamicly edit a var
+hyper var_name : ( var_name2 ) [ tag ] |
+
 ### Dynamicly edit a construct
 super var_name : ( var_name2 ) [ var_name3 ] |
 
