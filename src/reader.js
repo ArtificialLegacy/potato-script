@@ -44,33 +44,66 @@ let functionTemplate = {
 
 // compile project
 
-function compiler(){
-  for(let i = 0; i < file.length; i++) {
+function compiler(tempFile){
+  for(let i = 0; i < tempFile.length; i++) {
     ln = i;
-    fileStrings = file[i];
-    let check = "";
-    for(let r = 0; r < 100; r++){
-      check = check + fileStrings[r];
-      switch(check){
-        case "init":
-          break;
-        case "func":
-          break;
-        case "construct":
-          break;
-        case "index":
-          break;
-        case "math":
-          break;
-        case "complex":
-          break;
-        case "end":
-          break;
-        case "detect":
-          break;
-        default:
-          break;
-      }
+    fileStrings = tempFile[i];
+    let check = fileStrings.split(" ");
+    switch(check[0]){
+      case "init":
+        break;
+      case "func":
+        break;
+      case "construct":
+        break;
+      case "index":
+        break;
+      case "serve":
+        break;
+      case "math":
+        break;
+      case "edit":
+        break;
+      case "complex":
+        break;
+      case "end":
+        break;
+      case "detect":
+        break;
+      case "super":
+        break;
+      case "merge":
+        break;
+      case "run":
+        break;
+      case "insert":
+        break;
+      case "script":
+        break;
+      case "get":
+        break;
+      case "return":
+        break;
+      case "exit":
+        break;
+      case "rem":
+        break;
+      case "print":
+        break;
+      case "clear":
+        break;
+      case "parse":
+        break;
+      case "save":
+        break;
+      case "emit":
+        break;
+      case "loop":
+        break;
+      case "~~":
+        break;
+      default:
+        break;
     }
   }
 }
