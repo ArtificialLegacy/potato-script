@@ -30,6 +30,9 @@ let fileScope = {
   
 };
 
+let scope = "global";
+let ifCount = 0;
+
 let functionTemplate = {
   "name": "",
   "state": "",
@@ -51,6 +54,15 @@ function compiler(tempFile){
     let check = fileStrings.split(" ");
     switch(check[0]){
       case "init":
+        if(!check[1]) throw("Missing variable name;");
+        if(check[2] !== ":") throw("Missing symbol: ':';");
+        if(check[3] !== "(") throw("Missing symbol: '(';");
+        if(!check[4]) throw("No value provided;");
+        if(check[5] !== ")") throw("Missing symbol: ')';");
+        if(check[6] !== "[") throw("Missing symbol: '[';");
+        if(check[7] !== "global" || check[7] !== "local" || check[8] !== "private" || check[9] !== "constant") throw("Invalid tag provided;");
+        if(check[8] !== "]") throw("Missing symbol: ']';");
+        if(check[9] !== "|'") throw("Missing symbol: '|';");
         break;
       case "func":
         break;
