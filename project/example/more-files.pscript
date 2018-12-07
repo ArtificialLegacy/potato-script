@@ -7,7 +7,7 @@ get defaultY |
 merge tempX : ( defaultX ) |
 merge tempY : ( defaultY ) |
 
-func increment : ( sync ) [ global ] |
+func increment : ( sync ) [ static ] |
   edit tempX : ( 1 ) [ + ] |
   edit tempY : ( 1 ) [ + ] |
 end 1 |
