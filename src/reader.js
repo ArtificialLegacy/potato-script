@@ -63,6 +63,17 @@ function compiler(tempFile){
         if(check[7] !== "global" || check[7] !== "local" || check[8] !== "private" || check[9] !== "constant") throw("Invalid tag provided;");
         if(check[8] !== "]") throw("Missing symbol: ']';");
         if(check[9] !== "|'") throw("Missing symbol: '|';");
+        let name = check[1];
+        let value = check[4];
+        let tag = check[7];
+        if(scope == "global"){
+          globalScope.runners.push({
+            "type": "init",
+            "name": name,
+            "value": value,
+            "tag": tag,
+          });
+        }
         break;
       case "func":
         break;
