@@ -1,9 +1,9 @@
 ~~ import secondary file
 insert example-2 |
 
-parse example |
-index example : ( defaultX ) [ defaultX ] |
-index example : ( defaultY ) [ defaultY ] |
+parse example-config |
+index example-config : ( defaultX ) [ defaultX ] |
+index example-config : ( defaultY ) [ defaultY ] |
 
 ~~ define global vars
 init x : ( 0 ) [ global ] |
