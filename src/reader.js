@@ -227,3 +227,5 @@ function compiler(tempFile){
     }
   }
 }
+
+console.dir(globalScope);
