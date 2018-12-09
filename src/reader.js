@@ -2,12 +2,12 @@
 
 const fs = require("fs");
 
-let project = JSON.parse(fs.readFileSync('../project.json'));
+let project = JSON.parse(fs.readFileSync('./potato-script/project.json'));
 
-let projectName = project.project;
+let projectName = project.name;
 let entry = project.entry;
 
-let file = fs.readFileSync(`../project/${projectName}/${entry}.pscript`);
+let file = fs.readFileSync(`./potato-script/project/${projectName}/${entry}.pscript`).toString();
 
 // setup reader template
 
@@ -48,9 +48,9 @@ let functionTemplate = {
 // compile project
 
 function compiler(tempFile){
-  for(let i = 0; i < tempFile.length; i++) {
-    ln = i;
-    fileStrings = tempFile[i];
+  let lines = tempFile.split("\n");
+  for(let i = 0; i < lines.length; i++) {
+    fileStrings = lines[i];
     let check = fileStrings.split(" ");
     switch(check[0]){
       case "init":
@@ -60,12 +60,12 @@ function compiler(tempFile){
         if(!check[4]) throw("No value provided;");
         if(check[5] !== ")") throw("Missing symbol: ')';");
         if(check[6] !== "[") throw("Missing symbol: '[';");
-        if(check[7] !== "global" || check[7] !== "local" || check[8] !== "private" || check[9] !== "constant") throw("Invalid tag provided;");
+        if(check[7] !== "global" && check[7] !== "local" && check[8] !== "private" && check[9] !== "constant") throw("Invalid tag provided;");
         if(check[8] !== "]") throw("Missing symbol: ']';");
-        if(check[9] !== "|'") throw("Missing symbol: '|';");
-        let name = check[1];
-        let value = check[4];
-        let tag = check[7];
+        if(check[9] !== "|\r") throw("Missing symbol: '|';");
+        name = check[1];
+        value = check[4];
+        tag = check[7];
         if(scope == "global"){
           globalScope.runners.push({
             "type": "init",
@@ -92,10 +92,10 @@ function compiler(tempFile){
         if(check[6] !== "[") throw("Missing symbol: '[';");
         if(check[7] !== "static" || check[7] !== "private") throw("Invalid tag provided;");
         if(check[8] !== "]") throw("Missing symbol: ']';");
-        if(check[9] !== "|'") throw("Missing symbol: '|';");
-        let name = check[1];
-        let state = check[4];
-        let tag = check[7];
+        if(check[9] !== "|\r") throw("Missing symbol: '|';");
+        name = check[1];
+        state = check[4];
+        tag = check[7];
         if(scope == "global"){
           if(globalScope.functions[name]) throw(`Function: '${name}', is already defined.`);
           globalScope.functions[name] = {
@@ -121,20 +121,19 @@ function compiler(tempFile){
         if(!check[4]) throw("Missing construct type;");
         if(check[5] !== ")") throw("Missing symbol: ')';");
         if(check[6] !== "[") throw("Missing symbol: '[';");
-        if(check[7] !== "global" || check[7] !== "local" || check[8] !== "private" || check[9] !== "constant") throw("Invalid tag provided;");
+        if(check[7] !== "global" && check[7] !== "local" && check[8] !== "private" && check[9] !== "constant") throw("Invalid tag provided;");
         if(check[8] !== "]") throw("Missing symbol: ']';");
-        if(check[9] !== "|'") throw("Missing symbol: '|';");
-        let name = check[1];
-        let type = check[4];
-        let tag = check[7];
+        if(check[9] !== "|\r") throw("Missing symbol: '|';");
+        name = check[1];
+        type = check[4];
+        tag = check[7];
         if(scope == "global"){
-          if(globalScope.functions[name]) throw(`Function: '${name}', is already defined.`);
-          globalScope.functions[name] = {
+          globalScope.runners.push({
             "type": "construct",
             "name": name,
             "state": type,
             "tag": tag,
-          };
+          });
         } else {
           if(!globalScope.functions[scope]) throw(`Current scope does not exist. ${name}`);
           globalScope.functions[scope].runners.push({
@@ -152,12 +151,12 @@ function compiler(tempFile){
         if(!check[4]) throw("Missing index location;");
         if(check[5] !== ")") throw("Missing symbol: ')';");
         if(check[6] !== "[") throw("Missing symbol: '[';");
-        if(check[7] !== "global" || check[7] !== "local" || check[8] !== "private" || check[9] !== "constant") throw("Invalid tag provided;");
+        if(!check[7]) throw("No return provided;");
         if(check[8] !== "]") throw("Missing symbol: ']';");
-        if(check[9] !== "|'") throw("Missing symbol: '|';");
-        let name = check[1];
-        let type = check[4];
-        let tag = check[7];
+        if(check[9] !== "|\r") throw("Missing symbol: '|';");
+        name = check[1];
+        type = check[4];
+        tag = check[7];
         if(scope == "global"){
           if(globalScope.functions[name]) throw(`Function: '${name}', is already defined.`);
           globalScope.functions[name] = {
@@ -227,5 +226,7 @@ function compiler(tempFile){
     }
   }
 }
+
+compiler(file);
 
 console.dir(globalScope);
