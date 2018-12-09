@@ -2,12 +2,12 @@
 
 const fs = require("fs");
 
-let project = JSON.parse(fs.readFileSync('./potato-script/project.json'));
+let project = JSON.parse(fs.readFileSync('./project.json'));
 
 let projectName = project.name;
 let entry = project.entry;
 
-let file = fs.readFileSync(`./potato-script/project/${projectName}/${entry}.pscript`).toString();
+let file = fs.readFileSync(`./project/${projectName}/${entry}.pscript`).toString();
 
 // setup reader template
 
