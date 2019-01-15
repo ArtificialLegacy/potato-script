@@ -84,6 +84,16 @@ save file_name : ( style ) |
 ### send a var into a script scope
 emit file_name : ( var_name ) |
 
+### return a function from a script scope
+retF func_name |
+
+### get a function from the main file
+import func_name |
+
+### map a contruct
+transform construct_name : ( number ) [ tag ] |
+TAG = +, -, *, /, %, **, =
+
 ### define a loop
 loop |
 
